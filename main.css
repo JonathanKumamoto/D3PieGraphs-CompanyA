@@ -1,0 +1,55 @@
+/*
+main.css stylsheet for d3 project
+
+Created and maintained by Jonathan Kumamoto
+
+*/
+#wrapper1 {
+    /* place holder for future editing*/
+}
+#wrapper2 {
+    /* place holder for future editing*/
+}
+
+#pieChart1 {
+    background-color:white;
+    width:500px;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+}
+#pieChart2 {
+    background-color:ghostwhite;
+    width:500px;
+    display: inline-block;
+    text-align: center;
+}
+#pieChart3 {
+    background-color:ghostwhite;
+    width:500px;
+    display: inline-block;
+}
+#pieChart4 {
+    background-color:white;
+    width:500px;
+    display: inline-block;
+}
+
+/* Allows centering and vertical stacking of items */
+#container{
+    margin: 0px 0;
+    padding: 0;
+    text-align: center;
+}
+/* Allows centering and vertical stacking of items for text boxes */
+#containerText{
+    width: 500px;
+    margin: 0px auto;
+    padding: 0;
+    text-align: left;
+    display: block;
+}
+/* indent paragraphs */
+p {
+    text-indent: 25px;
+}
