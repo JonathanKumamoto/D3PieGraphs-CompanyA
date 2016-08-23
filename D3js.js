@@ -1,17 +1,37 @@
+/*
+Copyright by Jonathan Simeon Kumamoto 2016
 
-var standing = new Map();
+********************************Purpose*********************************
+This file's purpose is to:
+1. Parse data from a .csv file
+2. Map that data and assign as an object
+3. Display that data while determining the layout needed to correctly display the data.
+************************************************************************
 
+********************************Future**********************************
+While not preferred, currently the file combines layout + behavior + content. 
+For a future reference, I will need to seperate behavior to another .js file
+as well as content to another file and have only this file render what needs to be displayed.
+************************************************************************
+*/
+
+var standing = new Map(); //variable to store mapped strings to interate through
+
+//Adds a field for the "standing" Map()
 d3.csv("Data.csv", function(data) {
     data.forEach(function(d) {
     standing[d["Standing"]] =0;
     });
   });
 
+/***********************************************************************
+This particular section looks to display people's current standing in terms of official positions
+*/
 d3.csv("Data.csv", function(data) {
     data.forEach(function(d) {
     standing[d["Standing"]] += 1;
   });
-    //magic happens here
+    //Assign content for behavior purposesd
     var integerFreshman = parseInt(standing["Freshman"]);
     var integerSophomore = parseInt(standing["Sophomore"]);
     var integerJunior = parseInt(standing["Junior"]);
@@ -65,10 +85,13 @@ d3.csv("Data.csv", function(data) {
 		}
 	}});
 });
-//-------------------------------------End of code for finding standings
+//*****************************************************END of "standings"
 
 var major = new Map();
 
+/***********************************************************************
+This particular section looks to display people's major
+*/
 d3.csv("Data.csv", function(data) {
     data.forEach(function(d) {
     major[d["Major"]] =0;
@@ -142,10 +165,13 @@ d3.csv("Data.csv", function(data) {
 	}});
     console.log(major);
 });
-//-------------------------------------End of code for finding major related items
+//***************************End of code for finding major related items
 
 var prerequisites = new Map();
 
+/***********************************************************************
+This particular section looks to display people's current standing in terms of being an intern or not
+*/
 d3.csv("Data.csv", function(data) {
     data.forEach(function(d) {
     prerequisites[d["Intern"]] =0;
@@ -205,10 +231,13 @@ d3.csv("Data.csv", function(data) {
 		}
 	}});
 });
-//-------------------------------------End of code for finding interns prerequisites
+//*************************End of code for finding interns prerequisites
 
 var letter = new Map();
 
+/***********************************************************************
+This particular section looks to display people's current standing in terms of department positon
+*/
 d3.csv("Data.csv", function(data) {
     data.forEach(function(d) {
     letter[d["Department"]] =0;
@@ -274,19 +303,21 @@ d3.csv("Data.csv", function(data) {
 	}});
 });
 
-//-------------------------------------End of code for finding database
+//*************************End of code for finding department standings
 
 
-//Copyright 2016 Jonathan Simeon Kumamoto
-//
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-//
-//    http://www.apache.org/licenses/LICENSE-2.0
-//
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
+/*
+/opyright 2016 Jonathan Simeon Kumamoto
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
