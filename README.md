@@ -1,5 +1,7 @@
-# Implementation of D3 for a hypothetical data driven document from "Company A"
+##link to preview file:
+https://htmlpreview.github.io/?https://github.com/JonathanKumamoto/D3PieGraphs-CompanyA/blob/master/index.html
 
+# Implementation of D3 for a hypothetical data driven document from "Company A"
 
 Created for the purpose of showing basic D3 development. A basic D3.js development using HTML, CSS, Javascript, and D3.
 
